@@ -1,11 +1,11 @@
 #!/bin/bash
 
 #install java 8
-add-apt-repository -y ppa:webupd8team/java
-apt-get -y update
+sudo add-apt-repository -y ppa:webupd8team/java
+sudo apt-get -y update
 echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-apt-get -y install oracle-java8-installer
+sudo apt-get -y install oracle-java8-installer
 
 #change permissions for data dir
 chmod 777 /mnt/*
@@ -13,12 +13,9 @@ chmod 777 /mnt/*
 #install dse
 curl --user amandava_datastax.com:dikPScgf4Eeo0ia -L http://downloads.datastax.com/enterprise/dse.tar.gz | tar xz
 
-#install pip
-apt-get install python-pip
-
 #install python script dependencies
-apt-get install python-pip
-pip install virtualenv
+sudo apt-get install python-pip
+sudo pip install virtualenv
 mkdir setuptmp
 cd setuptmp
 virtualenv venv
