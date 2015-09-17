@@ -23,7 +23,7 @@ cyaml['listen_address']=private_ip
 #change rpc_address
 cyaml['rpc_address']=private_ip
 #change datafile_directories
-cyaml['data_file_directories']=cassandra_dir+"data"
+cyaml['data_file_directories']=[cassandra_dir+"data"]
 #change commitlog directory
 cyaml['commitlog_directory']=cassandra_dir+"commitlog"
 #change saved caches directory
