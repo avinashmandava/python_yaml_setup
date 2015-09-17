@@ -26,13 +26,12 @@ source venv/bin/activate
 pip install pyyaml
 
 #download and modify python script
-wget <link to python file>
-chmod 777 <python file>
+wget https://raw.githubusercontent.com/avinashmandava/python_yaml_setup/master/yamlsetup.py
+chmod 777 yamlsetup.py
 
 #prepare python script args
-PRIVATEIP=`ip route get 8.8.8.8 | awk '{print $NF; exit}'`
 DATADIR="/mnt/cassandra/"
-SEEDNODE=`ip route get 8.8.8.8 | awk '{print $NF; exit}'`
 YAMLFILE="../dse-4.7.3/resources/cassandra/conf/cassandra.yaml"
+PRIVATEIP=`ip route get 8.8.8.8 | awk '{print $NF; exit}'`
+SEEDNODE=`ip route get 8.8.8.8 | awk '{print $NF; exit}'`
 python yamlsetup.py $YAMLFILE $PRIVATEIP $SEEDNODE $DATADIR
-#
