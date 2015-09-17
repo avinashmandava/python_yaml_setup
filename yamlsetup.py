@@ -17,7 +17,7 @@ cassandra_dir = sys.argv[4]
 #load yaml dictionary from yaml file
 cyaml = yaml.load(open(fname))
 #change seed from arg
-cyaml['seed_provider'][0]['parameters'][0]['seeds']='"'+seed_ip+'"'
+cyaml['seed_provider'][0]['parameters'][0]['seeds']='\"'+seed_ip+'\"'
 #change listen_address
 cyaml['listen_address']=private_ip
 #change rpc_address
